@@ -1,0 +1,188 @@
+/* styles.css */
+
+body {
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.app-content {
+    width: 100%; /* Updated width */
+    max-width: 1400px; /* Added max-width */
+    height: 100%; /* Updated height */
+    max-height: 710px; /* Added max-height */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-container {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    width: 400px;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    background-color: #fff;
+    background-image: url('Search icon.png');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.filter-bar {
+    padding: 10px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.theme-toggle {
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.todo-item {
+    margin-bottom: 10px;
+}
+
+.todo-item button {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.todo-item button:hover {
+    background-color: #c82333;
+}
+
+.add-todo-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000; /* Ensure the icon is above other elements */
+}
+
+.add-todo-icon:hover {
+    background-color: #04ee56;
+}
+
+/* AddTodoPopup styles */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #6C63FF;
+    width: 500px;
+    height: 289px;
+    z-index: 1000; /* Ensure the popup is above other elements */
+}
+
+
+.popup-title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.popup-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.apply-button-container {
+    text-align: right;
+}
+
+.cancel-button-container {
+    text-align: left;
+}
+
+/* Media Queries */
+@media screen and (max-width: 700px) {
+    .app-content {
+        width: 100%;
+        max-width: 500px;
+        height: 100%;
+        max-height: 300px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .app-content {
+        width: 100%;
+        max-width: 1400px;
+        height: 100%;
+        max-height: 710px;
+    }
+}
+
+@media (min-width: 300px) {
+    .app-content {
+        width: 100%;
+        max-width: 600px;
+        height: 100%;
+        max-height: 400px;
+    }
+}
