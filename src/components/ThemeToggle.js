@@ -1,4 +1,12 @@
 // ThemeToggle.js
+
+/**
+ * Component for toggling between dark and light themes.
+ * @param {Object} props - The component props.
+ * @param {boolean} props.darkMode - Flag indicating whether dark mode is enabled.
+ * @param {Function} props.toggleDarkMode - Function to toggle dark mode.
+ * @returns {JSX.Element} - JSX element representing the ThemeToggle component.
+ */
 import React from "react";
 import darkModeIcon from "../styles/mode.png";
 import lightModeIcon from "../styles/sun.png";

@@ -1,3 +1,8 @@
+// api.js
+
+/**
+ * API functions for interacting with the todo backend.
+ */
 const baseUrl = "http://localhost:4200";
 
 export const getAllTodos = async () => {

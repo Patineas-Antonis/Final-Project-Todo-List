@@ -1,19 +1,20 @@
 {
   "todos": [
     {
-      "id": "1",
-      "text": "Finish coding task",
+      "id": "6fed"
+    },
+    {
+      "id": "0b15",
+      "text": "Welcome to Tech Pro",
       "completed": false
     },
     {
-      "id": "2",
-      "text": "Submit project",
-      "completed": true
+      "text": "Todo List Task 1",
+      "id": "46fe"
     },
     {
-      "id": "263d",
-      "text": "test",
-      "completed": false
+      "text": "Todo List Task 2",
+      "id": "dca5"
     }
   ]
 }

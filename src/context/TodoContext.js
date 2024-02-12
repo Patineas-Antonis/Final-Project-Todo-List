@@ -1,12 +1,15 @@
-import React, { createContext, useContext, useReducer } from "react";
+// TodoContext.js
 
+/**
+ * Context for managing todo state.
+ */
+import React, { createContext, useContext, useReducer } from "react";
 
 const TodoContext = createContext();
 
 const initialState = {
   todos: [],
 };
-
 
 const todoReducer = (state, action) => {
   switch (action.type) {
@@ -18,7 +21,6 @@ const todoReducer = (state, action) => {
       return state;
   }
 };
-
 
 export const useTodoContext = () => {
   return useContext(TodoContext);

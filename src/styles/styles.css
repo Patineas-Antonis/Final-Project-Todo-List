@@ -6,6 +6,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    
 }
 
 .app {
@@ -13,6 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+   
 }
 
 .dark-mode {
@@ -26,8 +28,9 @@ body {
     height: 100%; /* Updated height */
     max-height: 710px; /* Added max-height */
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #6C63FF;
+    
 }
 
 h1 {
@@ -44,11 +47,11 @@ h1 {
     flex: 1;
     width: 400px;
     padding: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid #6C63FF;
     border-radius: 4px;
     outline: none;
     background-color: #fff;
-    background-image: url('Search icon.png');
+    background-image: url('Search\ icon.png');
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 20px;
@@ -56,12 +59,61 @@ h1 {
     font-size: 16px;
 }
 
-.filter-bar {
-    padding: 10px;
-    border-radius: 4px;
-    margin-left: 10px;
-    cursor: pointer;
-}
+.filter-bar select {
+    width: 200px; /* Adjust width as needed */
+    height: 38px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: 1px solid #6C63FF;
+    background: #6C63FF;
+    color: #000000; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+  }
+
+/* Container for Search Bar and Filter Bar */
+.filter-bar-container {
+    display: flex; /* Use flexbox */
+    align-items: center; /* Align items vertically */
+  }
+  
+  /* Search Bar */
+  .filter-bar input[type="text"] {
+    width: 536px; /* Set width to 536px */
+    height: 38px; /* Keep the height fixed */
+    padding: 8px 16px; /* Set padding */
+    border-radius: 5px;
+    border: 1px solid #6C63FF;
+    background: #fff; /* Changed background color to white */
+    color: #6C63FF; /* Text color */
+    font-size: 14px; /* Keep the font size as specified */
+  }
+  
+  /* Filter Bar */
+  .filter-bar select {
+    width: 160px; /* Set width to 160px */
+    height: 38px; /* Keep the height fixed */
+    padding: 8px 16px; /* Set padding */
+    border-radius: 5px;
+    border: 1px solid #6C63FF;
+    background: #fff; /* Changed background color to white */
+    color: #6C63FF; /* Text color */
+    font-size: 14px; /* Keep the font size as specified */
+  }
+  
+  
+  /* Theme Toggle Button */
+  .theme-toggle-button {
+    width: 50px; /* Keep the width fixed */
+    height: 30px; /* Keep the height fixed */
+    padding: 5px 10px; /* Keep the padding as specified */
+    border-radius: 5px;
+    border: 1px solid #6C63FF;
+    background: #6C63FF;
+    color: #fff; /* Text color */
+    font-size: 14px; /* Keep the font size as specified */
+  }
+  
+  
 
 .theme-toggle {
     padding: 10px;
@@ -70,7 +122,9 @@ h1 {
 }
 
 .todo-item {
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
 .todo-item button {
@@ -83,9 +137,6 @@ h1 {
     margin-left: 10px;
 }
 
-.todo-item button:hover {
-    background-color: #c82333;
-}
 
 .add-todo-icon {
     position: fixed;
@@ -134,7 +185,7 @@ h1 {
 .popup-input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #6C63FF;
     border-radius: 4px;
     margin-bottom: 20px;
 }
@@ -142,6 +193,7 @@ h1 {
 .popup-buttons {
     display: flex;
     justify-content: space-between;
+    color: #6C63FF;
 }
 
 .popup-button {
@@ -149,20 +201,67 @@ h1 {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    color: #6C63FF;
 }
 
 .apply-button-container {
     text-align: right;
+    color: #6C63FF;
 }
 
 .cancel-button-container {
     text-align: left;
+    color: #6C63FF;
 }
+
+.todo-item {
+    position: relative; /* Add position relative for absolute positioning */
+  }
+  
+  .todo-buttons {
+    position: absolute; /* Position buttons absolutely */
+    top: 0;
+    right: -10px; /* Hide buttons initially */
+    display: none; /* Hide buttons initially */
+  }
+  
+  .todo-item:hover .todo-buttons {
+    display: flex; /* Show buttons when hovering over todo item */
+  }
+  
+  .todo-buttons button {
+    margin-left: 5px; /* Add margin between delete and edit buttons */
+  }
+  
+  
+  .edit-button:hover {
+    color: #6C63FF; /* Color on hover */
+  }
+  .delete-button:hover {
+    color: #fb0202;
+   }
+  
+  .todo-item input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background-color: #fff; /* Set the color of the checkmark to white */
+    border-radius: 1; /* Round the corners of the checkmark */
+    opacity: 0; /* Hide the checkmark by default */
+  }
+  
+  .todo-item input[type="checkbox"]:checked::before {
+    opacity: 1; /* Show the checkmark when the checkbox is checked */
+  }
+  
 
 /* Media Queries */
 @media screen and (max-width: 700px) {
     .app-content {
-        width: 100%;
         max-width: 500px;
         height: 100%;
         max-height: 300px;
@@ -171,7 +270,6 @@ h1 {
 
 @media (min-width: 1200px) {
     .app-content {
-        width: 100%;
         max-width: 1400px;
         height: 100%;
         max-height: 710px;
@@ -180,7 +278,6 @@ h1 {
 
 @media (min-width: 300px) {
     .app-content {
-        width: 100%;
         max-width: 600px;
         height: 100%;
         max-height: 400px;
